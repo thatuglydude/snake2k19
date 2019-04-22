@@ -1,0 +1,11 @@
+# build artifactes and intermediates
+**/Build
+**/Dump
+
+
+# ignore the binaries
+**/*.dll
+
+# ignore unimportant VS files
+**/*.user
+.vs

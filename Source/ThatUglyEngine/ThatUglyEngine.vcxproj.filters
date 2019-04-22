@@ -1,0 +1,154 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Source\utils">
+      <UniqueIdentifier>{01f7519a-6168-4c4f-8812-eaa9f6f9a85a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\utils\log">
+      <UniqueIdentifier>{5954365b-8cd1-4fd5-b0c9-c018c8041069}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\rendering">
+      <UniqueIdentifier>{e605c99b-dfbd-430e-8679-050c1ffca4c7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\stage">
+      <UniqueIdentifier>{36b7bc55-03c8-420a-9f51-0f761e8b6189}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\sdl2_wrapper">
+      <UniqueIdentifier>{1522b4c7-af1f-460a-93dd-9d1150da1fe9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\ecs">
+      <UniqueIdentifier>{ab6b0e3e-7cf5-4ed4-9f4d-0e2235d09b43}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\ecs\component">
+      <UniqueIdentifier>{a4b766ba-c756-4430-95ea-81645ff0c4d1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\ecs\component\container">
+      <UniqueIdentifier>{a5063f85-84a7-4a9a-ad70-bbb48ca35afc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\ecs\component\type">
+      <UniqueIdentifier>{3aef141d-4d53-4b36-b7f3-de8862fd9eae}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\ecs\entity">
+      <UniqueIdentifier>{0aad53e6-07ff-41b2-be39-7d9877d79f88}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\ecs\system">
+      <UniqueIdentifier>{d686a4ed-944e-4ea4-9ded-69eb647eeb2a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\ecs\type">
+      <UniqueIdentifier>{0486440e-813c-48c3-8ecc-d27c378c2c10}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\LogItem.cpp">
+      <Filter>Source\utils\log</Filter>
+    </ClCompile>
+    <ClCompile Include="src\SDLRenderer.cpp">
+      <Filter>Source\sdl2_wrapper</Filter>
+    </ClCompile>
+    <ClCompile Include="src\SDLWindow.cpp">
+      <Filter>Source\sdl2_wrapper</Filter>
+    </ClCompile>
+    <ClCompile Include="src\TextureDictionary.cpp">
+      <Filter>Source\rendering</Filter>
+    </ClCompile>
+    <ClCompile Include="src\TextureLoader.cpp">
+      <Filter>Source\rendering</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="include\Stage.h">
+      <Filter>Source\stage</Filter>
+    </ClInclude>
+    <ClInclude Include="include\CContainer.h">
+      <Filter>Source\ecs\component\container</Filter>
+    </ClInclude>
+    <ClInclude Include="include\CDrawable.h">
+      <Filter>Source\ecs\component\type</Filter>
+    </ClInclude>
+    <ClInclude Include="include\CRigidBody.h">
+      <Filter>Source\ecs\component\type</Filter>
+    </ClInclude>
+    <ClInclude Include="include\CTimed.h">
+      <Filter>Source\ecs\component\type</Filter>
+    </ClInclude>
+    <ClInclude Include="include\CVelocity.h">
+      <Filter>Source\ecs\component\type</Filter>
+    </ClInclude>
+    <ClInclude Include="include\CType.h">
+      <Filter>Source\ecs\component</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Entity.h">
+      <Filter>Source\ecs\entity</Filter>
+    </ClInclude>
+    <ClInclude Include="include\EntityId.h">
+      <Filter>Source\ecs\entity</Filter>
+    </ClInclude>
+    <ClInclude Include="include\EntityIdProvider.h">
+      <Filter>Source\ecs\entity</Filter>
+    </ClInclude>
+    <ClInclude Include="include\EntityManager.h">
+      <Filter>Source\ecs\entity</Filter>
+    </ClInclude>
+    <ClInclude Include="include\SCollider.h">
+      <Filter>Source\ecs\system</Filter>
+    </ClInclude>
+    <ClInclude Include="include\SPhysics.h">
+      <Filter>Source\ecs\system</Filter>
+    </ClInclude>
+    <ClInclude Include="include\SRenderer.h">
+      <Filter>Source\ecs\system</Filter>
+    </ClInclude>
+    <ClInclude Include="include\STimer.h">
+      <Filter>Source\ecs\system</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Physics.h">
+      <Filter>Source\ecs\type</Filter>
+    </ClInclude>
+    <ClInclude Include="include\SDLError.h">
+      <Filter>Source\sdl2_wrapper</Filter>
+    </ClInclude>
+    <ClInclude Include="include\SDLRenderer.h">
+      <Filter>Source\sdl2_wrapper</Filter>
+    </ClInclude>
+    <ClInclude Include="include\SDLWindow.h">
+      <Filter>Source\sdl2_wrapper</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Logging.h">
+      <Filter>Source\utils\log</Filter>
+    </ClInclude>
+    <ClInclude Include="include\LogItem.h">
+      <Filter>Source\utils\log</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Singleton.h">
+      <Filter>Source\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="include\ThatUglyEngine.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Surface.h">
+      <Filter>Source\rendering</Filter>
+    </ClInclude>
+    <ClInclude Include="include\TextureIdProvider.h">
+      <Filter>Source\rendering</Filter>
+    </ClInclude>
+    <ClInclude Include="include\TextureId.h">
+      <Filter>Source\rendering</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Texture.h">
+      <Filter>Source\rendering</Filter>
+    </ClInclude>
+    <ClInclude Include="include\TextureDictionary.h">
+      <Filter>Source\rendering</Filter>
+    </ClInclude>
+    <ClInclude Include="include\TextureError.h">
+      <Filter>Source\rendering</Filter>
+    </ClInclude>
+    <ClInclude Include="include\TextureLoader.h">
+      <Filter>Source\rendering</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
