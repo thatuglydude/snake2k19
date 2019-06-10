@@ -59,7 +59,7 @@ public:
 		m_snakeSegmentEIDs.emplace_back(m_entityManager.create<SnakeSegment>(
 			SDL_Rect{headPosition.first, headPosition.second, 1, 1},
 			m_baseTexture,
-			SDL_Rect{8 * m_tileSize, 8 * m_tileSize, m_tileSize, m_tileSize},
+			SDL_Rect{9 * m_tileSize, 8 * m_tileSize, m_tileSize, m_tileSize},
 			SDL_Rect{0, 0, m_drawSize, m_drawSize},
 			0)); // segments initially don't move!
 	}
