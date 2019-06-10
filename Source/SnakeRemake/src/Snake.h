@@ -2,52 +2,13 @@
 
 #include "Entity.h"
 
-#include "CRigidBody.h"
-#include "CDrawable.h"
-#include "CVelocity.h"
 #include "CTimed.h"
 #include "EntityManager.h"
 
+#include "SnakeSegment.h"
 #include "Logging.h"
 
 namespace tbd {
-
-class SnakeSegment : public Entity
-{
-public:
-	explicit SnakeSegment(const EntityId& entityId, const SDL_Rect& areaRect, const TextureId& textureId, const SDL_Rect& textureClip, const SDL_Rect& drawRect, const Speed initialSpeed)
-		: Entity{entityId, "snakeSegment", CType::COMPONENT_TYPE_RIGID_BODY | CType::COMPONENT_TYPE_DRAWABLE | CType::COMPONENT_TYPE_VELOCITY},
-		m_cRigidBody{m_entityId, areaRect, Rotation::ROTATION_EAST},
-		m_cDrawable{m_entityId, textureId, textureClip, drawRect},
-		m_cVelocity{m_entityId, Rotation::ROTATION_EAST, initialSpeed}
-	{}
-
-	void setRotation(const Rotation rotation)
-	{
-		m_cVelocity.setRotation(rotation);
-		m_cRigidBody.setRotation(rotation);
-	}
-
-	const Rotation rotation() const
-	{
-		return m_cRigidBody.rotation();
-	}
-
-	std::pair<int, int> getPosition() const
-	{
-		return {m_cRigidBody.x(), m_cRigidBody.y()};
-	}
-
-	void setSpeed(const int speed)
-	{
-		m_cVelocity.setSpeed(speed);
-	}
-
-private:
-	CRigidBody m_cRigidBody;
-	CDrawable m_cDrawable;
-	CVelocity m_cVelocity;
-};
 
 class Snake : public Entity
 {
@@ -108,28 +69,31 @@ public:
 		auto& headSegment = getHead();
 		const auto currentRotation = headSegment.rotation();
 
+		const auto headPosition = getHead().getPosition();
+		const auto firstSegmentPosition = getSegment(1).getPosition();
+
 		switch (targetRotation)
 		{
 		case Rotation::ROTATION_NORTH:
-			if (currentRotation == Rotation::ROTATION_EAST || currentRotation == Rotation::ROTATION_WEST)
+			if ((currentRotation == Rotation::ROTATION_EAST || currentRotation == Rotation::ROTATION_WEST) && headPosition.second != firstSegmentPosition.second + 1)
 			{
 				headSegment.setRotation(targetRotation);
 			}
 			break;
 		case Rotation::ROTATION_EAST:
-			if (currentRotation == Rotation::ROTATION_NORTH || currentRotation == Rotation::ROTATION_SOUTH)
+			if ((currentRotation == Rotation::ROTATION_NORTH || currentRotation == Rotation::ROTATION_SOUTH) && headPosition.first != firstSegmentPosition.first - 1)
 			{
 				headSegment.setRotation(targetRotation);
 			}
 			break;
 		case Rotation::ROTATION_SOUTH:
-			if (currentRotation == Rotation::ROTATION_EAST || currentRotation == Rotation::ROTATION_WEST)
+			if ((currentRotation == Rotation::ROTATION_EAST || currentRotation == Rotation::ROTATION_WEST) && headPosition.second != firstSegmentPosition.second - 1)
 			{
 				headSegment.setRotation(targetRotation);
 			}
 			break;
 		case Rotation::ROTATION_WEST:
-			if (currentRotation == Rotation::ROTATION_NORTH || currentRotation == Rotation::ROTATION_SOUTH)
+			if ((currentRotation == Rotation::ROTATION_NORTH || currentRotation == Rotation::ROTATION_SOUTH) && headPosition.first != firstSegmentPosition.first + 1)
 			{
 				headSegment.setRotation(targetRotation);
 			}
@@ -143,7 +107,7 @@ public:
 	{
 		for (size_t i = 1; i < m_snakeSegmentEIDs.size(); ++i)
 		{
-			auto& tailSegment = getSegment(i);;
+			auto& tailSegment = getSegment(i);
 			const auto tailPosition = tailSegment.getPosition();
 			const auto headPosition = getSegment(i-1).getPosition();
 

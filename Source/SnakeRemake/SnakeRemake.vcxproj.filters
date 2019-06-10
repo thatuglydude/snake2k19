@@ -84,6 +84,9 @@
     <ClInclude Include="src\SDLSystem.h">
       <Filter>Source</Filter>
     </ClInclude>
+    <ClInclude Include="src\SnakeSegment.h">
+      <Filter>Source\stage_game\objects\snake</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Text Include="resources\CREDITS">

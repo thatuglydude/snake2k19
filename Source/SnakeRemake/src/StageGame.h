@@ -4,7 +4,6 @@
 
 #include "GameScore.h"
 
-
 #include "Snake.h"
 #include "FoodGenerator.h"
 #include "Border.h"

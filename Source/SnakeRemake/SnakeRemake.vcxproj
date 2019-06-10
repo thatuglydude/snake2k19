@@ -32,6 +32,7 @@
     <ClInclude Include="src\GameOver.h" />
     <ClInclude Include="src\GameScore.h" />
     <ClInclude Include="src\SDLSystem.h" />
+    <ClInclude Include="src\SnakeSegment.h" />
     <ClInclude Include="src\TextCharacter.h" />
     <ClInclude Include="src\TextLabel.h" />
     <ClInclude Include="src\TextPallette.h" />
